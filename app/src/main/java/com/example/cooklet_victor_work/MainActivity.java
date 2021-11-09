@@ -139,4 +139,9 @@ public class MainActivity extends AppCompatActivity {
             return v == object;
         }
     }
+
+    public void openInstruction(View view) {
+        Intent intent = new Intent(this, Instruction.class);
+        startActivity(intent);
+    }
 }

@@ -8,24 +8,14 @@ import android.widget.Button;
 
 public class PreparationActivity extends AppCompatActivity {
 
-    Button Start;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_preparation);
-        Start = findViewById(R.id.start_button);
-        Start.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openInstruction();
-            }
-        });
     }
 
-    private void openInstruction() {
+    public void openInstruction(View view) {
         Intent intent = new Intent(this, Instruction.class);
         startActivity(intent);
-
     }
 }

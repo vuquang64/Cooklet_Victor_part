@@ -89,7 +89,7 @@ public class Instruction extends AppCompatActivity {
         public void onPageSelected(int position) {
             ColoredBars(position);
             if (position == screens.length - 1) {
-                Home.setText("Finish!");
+                Home.setText("Finish");
                 Back.setVisibility(View.GONE);
             } else {
                 Home.setText("Home");

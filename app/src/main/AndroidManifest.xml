@@ -13,7 +13,7 @@
             android:name=".IntroductionActivity"
             android:exported="true" />
         <activity
-            android:name=".PrepartionActivity"
+            android:name=".PreparationActivity"
             android:exported="true" />
         <activity
             android:name=".MainActivity"
@@ -24,6 +24,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".Instruction"
+            android:exported="true" />
+        <activity
+            android:name=".Step1Activity"
+            android:exported="true" />
+        <activity
+            android:name=".Step2Activity"
+            android:exported="true" />
+        <activity
+            android:name=".Step3Activity"
+            android:exported="true" />
+        <activity
+            android:name=".Step4Activity"
+            android:exported="true" />
     </application>
 
 </manifest>
