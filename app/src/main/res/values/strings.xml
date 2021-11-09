@@ -21,4 +21,12 @@
         <b>Finish and decorate the dish</b>\nPut some oil on the pan again, after it is hot, stir fry the tomatoes (1 minute), the onion (30 seconds),  then mix the beef again altogether with them.
         \nDecorate it with cilantro or your topping of choice. Eat it with hot rice is recommended.
     </string>
+
+    <!--description-->
+    <string name="description">
+        It is a Vietnamese traditional dish that is made with beef and vegetables all stir fry together. You can see every family meals that have this dish in Vietnam since it brings a lot of nutrition and energy also you can make it in less than 30 minutes. Here is a list of ingredients that you can prepare to make this dish.
+    </string>
+
+    <!--food name-->
+    <string name="food_name"> Fried beef in sweet &#38; sour</string>
 </resources>

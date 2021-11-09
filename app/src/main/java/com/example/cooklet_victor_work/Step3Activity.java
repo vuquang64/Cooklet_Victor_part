@@ -2,42 +2,26 @@ package com.example.cooklet_victor_work;
 
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
 public class Step3Activity extends AppCompatActivity {
 
-    private Button timer;
-
-    private CountDownTimer countDownTimer;
-    private long timeLeftInMilliseconds = 18000;
-    private boolean timerRunning;
+    public static CountDownTimer countDownTimer;
+    public static long timeLeftInMilliseconds = 18000;
+    public static boolean timerRunning;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_step3);
-
-        timer = findViewById(R.id.timer);
-
-        timer.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startStop();
-            }
-        });
     }
 
-    public void startStop() {
-        if(timerRunning){
-            stopTimer();
-        } else {
-            startTimer();
-        }
-    }
 
-    private void startTimer() {
+    public static void startTimer() {
+        /*NotificationCompat.Builder builder = new NotificationCompat.Builder()*/
         countDownTimer=new CountDownTimer(timeLeftInMilliseconds,1000) {
             @Override
             public void onTick(long l) {
@@ -51,7 +35,7 @@ public class Step3Activity extends AppCompatActivity {
         }.start();
         timerRunning=true;
     }
-    private void stopTimer() {
+    public static void stopTimer() {
         countDownTimer.cancel();
         timerRunning=false;
     }

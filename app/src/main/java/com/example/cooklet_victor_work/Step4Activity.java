@@ -8,36 +8,20 @@ import android.widget.Button;
 
 public class Step4Activity extends AppCompatActivity {
 
-    private Button timer;
 
-    private CountDownTimer countDownTimer;
-    private long timeLeftInMilliseconds = 90000;
-    private boolean timerRunning;
+    public static CountDownTimer countDownTimer;
+    public static long timeLeftInMilliseconds = 9000;
+    public static boolean timerRunning;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_step4);
-
-        timer = findViewById(R.id.timer);
-
-        timer.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startStop();
-            }
-        });
+        setContentView(R.layout.activity_step3);
     }
 
-    public void startStop() {
-        if(timerRunning){
-            stopTimer();
-        } else {
-            startTimer();
-        }
-    }
 
-    private void startTimer() {
+
+    public static void startTimer() {
         countDownTimer=new CountDownTimer(timeLeftInMilliseconds,1000) {
             @Override
             public void onTick(long l) {
@@ -51,7 +35,7 @@ public class Step4Activity extends AppCompatActivity {
         }.start();
         timerRunning=true;
     }
-    private void stopTimer() {
+    public static void stopTimer() {
         countDownTimer.cancel();
         timerRunning=false;
     }

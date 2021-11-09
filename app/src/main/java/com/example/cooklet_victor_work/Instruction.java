@@ -138,4 +138,28 @@ public class Instruction extends AppCompatActivity {
             return v == object;
         }
     }
+
+    public void countDown1(View view) {
+        if(Step2Activity.timerRunning){
+            Step2Activity.stopTimer();
+        } else {
+            Step2Activity.startTimer();
+        }
+    }
+
+    public static void countDown2(View view) {
+        if(Step3Activity.timerRunning){
+            Step3Activity.stopTimer();
+        } else {
+            Step3Activity.startTimer();
+        }
+    }
+
+    public static void countDown3(View view) {
+        if(Step4Activity.timerRunning){
+            Step4Activity.stopTimer();
+        } else {
+            Step4Activity.startTimer();
+        }
+    }
 }

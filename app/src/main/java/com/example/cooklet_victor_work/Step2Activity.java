@@ -7,28 +7,19 @@ import android.view.View;
 import android.widget.Button;
 
 public class Step2Activity extends AppCompatActivity {
-    private Button timer;
+    public Button timer;
 
-    private CountDownTimer countDownTimer;
-    private long timeLeftInMilliseconds = 600000;
-    private boolean timerRunning;
+    public static CountDownTimer countDownTimer;
+    public static long timeLeftInMilliseconds = 600000;
+    public static boolean timerRunning;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_step2);
-
-        timer = findViewById(R.id.timer);
-
-        timer.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startStop();
-            }
-        });
     }
 
-    public void startStop() {
+    public static void countDown1(View view) {
         if(timerRunning){
             stopTimer();
         } else {
@@ -36,7 +27,7 @@ public class Step2Activity extends AppCompatActivity {
         }
     }
 
-    private void startTimer() {
+    public static void startTimer() {
         countDownTimer=new CountDownTimer(timeLeftInMilliseconds,1000) {
             @Override
             public void onTick(long l) {
@@ -50,7 +41,7 @@ public class Step2Activity extends AppCompatActivity {
         }.start();
         timerRunning=true;
     }
-    private void stopTimer() {
+    public static void stopTimer() {
         countDownTimer.cancel();
         timerRunning=false;
     }
