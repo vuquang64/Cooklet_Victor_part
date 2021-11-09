@@ -34,4 +34,15 @@
         <item>#ff9065</item>
         <item>#ff9065</item>
     </array>
+
+    <!-- dots for introduction and preparation  -->
+    <array name="two_dot_on_page_active">
+        <item>#B71C1C</item>
+        <item>#B71C1C</item>
+    </array>
+
+    <array name="two_dot_on_page_not_active">
+        <item>#ff9065</item>
+        <item>#ff9065</item>
+    </array>
 </resources>
