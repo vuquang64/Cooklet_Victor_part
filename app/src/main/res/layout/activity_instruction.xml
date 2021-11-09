@@ -10,7 +10,7 @@
     <LinearLayout
         android:id="@+id/layoutBars"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="50dp"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="51dp"
         android:gravity="center"
@@ -23,8 +23,8 @@
         android:layout_height="wrap_content"
         android:background="@drawable/borderless_ripple"
         android:text="home"
-        android:textSize="20dp"
-        android:onClick="hoe"
+        android:textSize="20sp"
+        android:onClick="home"
         android:textColor="@android:color/black"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
@@ -39,10 +39,11 @@
         android:id="@+id/back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/borderless_ripple"
+        android:background="@drawable/white_button"
         android:text="Back"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:onClick="skip"
+        android:layout_margin="5dp"
         android:textColor="@android:color/black"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true" />
