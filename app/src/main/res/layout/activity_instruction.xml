@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <android.support.v4.view.ViewPager
         android:id="@+id/view_pager"
         android:layout_width="match_parent"
@@ -37,11 +38,10 @@
         android:layout_alignParentStart="true" />
     <Button
         android:id="@+id/back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/white_button"
-        android:text="Back"
-        android:textSize="20sp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/circle_button"
+        android:foreground="@drawable/ic_back_arrow"
         android:onClick="skip"
         android:layout_margin="5dp"
         android:textColor="@android:color/black"

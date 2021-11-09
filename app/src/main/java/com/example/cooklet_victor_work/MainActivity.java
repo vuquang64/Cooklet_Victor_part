@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     LinearLayout Layout_bars;
     TextView[] bottomBars;
     int[] screens;
-    Button Back, Home;
+    Button Back;
     ViewPager vp;
     MainActivity.MyViewPagerAdapter myvpAdapter;
 
@@ -33,17 +33,14 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_instruction);
+        setContentView(R.layout.activity_main);
         screens = new int[]{
-                R.layout.activity_step1,
-                R.layout.activity_step2,
-                R.layout.activity_step3,
-                R.layout.activity_step4
+                R.layout.activity_introduction,
+                R.layout.activity_preparation
         };
         vp = (ViewPager) findViewById(R.id.view_pager);
         Layout_bars = (LinearLayout) findViewById(R.id.layoutBars);
         Back = (Button) findViewById(R.id.back);
-        Home = (Button) findViewById(R.id.home);
         myvpAdapter = new MainActivity.MyViewPagerAdapter();
         vp.setAdapter(myvpAdapter);
         vp.addOnPageChangeListener(viewPagerPageChangeListener);
@@ -64,8 +61,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void ColoredBars(int thisScreen) {
-        int[] colorsInactive = getResources().getIntArray(R.array.dot_on_page_not_active);
-        int[] colorsActive = getResources().getIntArray(R.array.dot_on_page_active);
+        int[] colorsInactive = getResources().getIntArray(R.array.two_dot_on_page_not_active);
+        int[] colorsActive = getResources().getIntArray(R.array.two_dot_on_page_active);
         bottomBars = new TextView[screens.length];
 
         Layout_bars.removeAllViews();
@@ -95,10 +92,8 @@ public class MainActivity extends AppCompatActivity {
         public void onPageSelected(int position) {
             ColoredBars(position);
             if (position == screens.length - 1) {
-                Home.setText("Finish!");
                 Back.setVisibility(View.GONE);
             } else {
-                Home.setText("Home");
                 Back.setVisibility(View.VISIBLE);
             }
         }
