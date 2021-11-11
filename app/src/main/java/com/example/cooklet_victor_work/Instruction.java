@@ -96,6 +96,17 @@ public class Instruction extends AppCompatActivity {
 
         @Override
         public void onPageSelected(int position) {
+            if (position == 0) {
+                android.app.Notification notification = new NotificationCompat.Builder(Instruction.this, CHANNEL_2_ID)
+                        .setSmallIcon(R.drawable.ic_launcher_background)
+                        .setContentTitle("Step 1")
+                        .setContentText(getString(R.string.step1_name))
+                        .setPriority(NotificationCompat.PRIORITY_HIGH)
+                        .setCategory(NotificationCompat.CATEGORY_MESSAGE)
+                        .setAutoCancel(true)
+                        .build();
+                notificationManager.notify(2, notification);
+            }
             if (position == 1) {
 
                 android.app.Notification notification = new NotificationCompat.Builder(Instruction.this, CHANNEL_2_ID)
@@ -131,6 +142,7 @@ public class Instruction extends AppCompatActivity {
                 notificationManager.notify(2, notification);
             }
 
+
             ColoredBars(position);
             if (position == screens.length - 1) {
                 Home.setText("Finish");
@@ -160,6 +172,18 @@ public class Instruction extends AppCompatActivity {
 
         @Override
         public Object instantiateItem(ViewGroup container, int position) {
+            if (position == 0) {
+                android.app.Notification notification = new NotificationCompat.Builder(Instruction.this, CHANNEL_2_ID)
+                        .setSmallIcon(R.drawable.ic_launcher_background)
+                        .setContentTitle("Step 1")
+                        .setContentText(getString(R.string.step1_name))
+                        .setPriority(NotificationCompat.PRIORITY_HIGH)
+                        .setCategory(NotificationCompat.CATEGORY_MESSAGE)
+                        .setAutoCancel(true)
+                        .build();
+                notificationManager.notify(2, notification);
+            }
+
             inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             View view = inflater.inflate(screens[position], container, false);
             container.addView(view);

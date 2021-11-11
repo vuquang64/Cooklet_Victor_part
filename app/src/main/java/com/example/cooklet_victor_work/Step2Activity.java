@@ -10,7 +10,7 @@ public class Step2Activity extends AppCompatActivity {
     public Button timer;
 
     public static CountDownTimer countDownTimer;
-    public static long timeLeftInMilliseconds = 10000;
+    public static long timeLeftInMilliseconds = 600000;
     public static boolean timerRunning;
 
     @Override

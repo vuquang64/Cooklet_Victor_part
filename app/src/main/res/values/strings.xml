@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Cooklet_Victor_Work</string>
+    <string name="app_name">Cooklet</string>
     <!--step instruction-->
     <string name="step1_name"><b>Prepare ingredients</b></string>
     <string name="step1">

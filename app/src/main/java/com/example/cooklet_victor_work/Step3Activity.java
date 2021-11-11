@@ -10,7 +10,7 @@ import android.widget.Button;
 public class Step3Activity extends AppCompatActivity {
 
     public static CountDownTimer countDownTimer;
-    public static long timeLeftInMilliseconds = 15000;
+    public static long timeLeftInMilliseconds = 180000;
     public static boolean timerRunning;
 
     @Override
