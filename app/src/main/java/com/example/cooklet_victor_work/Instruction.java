@@ -1,9 +1,14 @@
 package com.example.cooklet_victor_work;
 
+import static com.example.cooklet_victor_work.Notification.CHANNEL_1_ID;
+import static com.example.cooklet_victor_work.Notification.CHANNEL_2_ID;
+
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.support.v4.app.NotificationCompat;
+import android.support.v4.app.NotificationManagerCompat;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -16,13 +21,14 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class Instruction extends AppCompatActivity {
-
     LinearLayout Layout_bars;
     TextView[] bottomBars;
     int[] screens;
     Button Home,Back;
     ViewPager vp;
     MyViewPagerAdapter myvpAdapter;
+
+    private NotificationManagerCompat notificationManager;
 
 
     @Override
@@ -43,6 +49,8 @@ public class Instruction extends AppCompatActivity {
         vp.setAdapter(myvpAdapter);
         vp.addOnPageChangeListener(viewPagerPageChangeListener);
         ColoredBars(0);
+
+        notificationManager = NotificationManagerCompat.from(this);
     }
 
     public void next(View v) {
@@ -84,10 +92,45 @@ public class Instruction extends AppCompatActivity {
         finish();
     }
 
-    ViewPager.OnPageChangeListener viewPagerPageChangeListener = new ViewPager.OnPageChangeListener() {
+    final ViewPager.OnPageChangeListener viewPagerPageChangeListener = new ViewPager.OnPageChangeListener() {
 
         @Override
         public void onPageSelected(int position) {
+            if (position == 1) {
+
+                android.app.Notification notification = new NotificationCompat.Builder(Instruction.this, CHANNEL_2_ID)
+                        .setSmallIcon(R.drawable.ic_launcher_background)
+                        .setContentTitle("Step 2")
+                        .setContentText(getString(R.string.step2_name))
+                        .setPriority(NotificationCompat.PRIORITY_HIGH)
+                        .setCategory(NotificationCompat.CATEGORY_MESSAGE)
+                        .setAutoCancel(true)
+                        .build();
+                notificationManager.notify(2, notification);
+            }
+            if (position == 2) {
+                android.app.Notification notification = new NotificationCompat.Builder(Instruction.this, CHANNEL_2_ID)
+                        .setSmallIcon(R.drawable.ic_launcher_background)
+                        .setContentTitle("Step 3")
+                        .setContentText(getString(R.string.step3_name))
+                        .setPriority(NotificationCompat.PRIORITY_HIGH)
+                        .setCategory(NotificationCompat.CATEGORY_MESSAGE)
+                        .setAutoCancel(true)
+                        .build();
+                notificationManager.notify(2, notification);
+            }
+            if (position == 3) {
+                android.app.Notification notification = new NotificationCompat.Builder(Instruction.this, CHANNEL_2_ID)
+                        .setSmallIcon(R.drawable.ic_launcher_background)
+                        .setContentTitle("Step 4")
+                        .setContentText(getString(R.string.step4_name))
+                        .setPriority(NotificationCompat.PRIORITY_HIGH)
+                        .setCategory(NotificationCompat.CATEGORY_MESSAGE)
+                        .setAutoCancel(true)
+                        .build();
+                notificationManager.notify(2, notification);
+            }
+
             ColoredBars(position);
             if (position == screens.length - 1) {
                 Home.setText("Finish");
@@ -148,7 +191,7 @@ public class Instruction extends AppCompatActivity {
         }
     }
 
-    public static void countDown2(View view) {
+    public void countDown2(View view) {
         if(Step3Activity.timerRunning){
             stopTimer2();
         } else {
@@ -156,7 +199,7 @@ public class Instruction extends AppCompatActivity {
         }
     }
 
-    public static void countDown3(View view) {
+    public void countDown3(View view) {
         if(Step4Activity.timerRunning){
             stopTimer3();
         } else {
@@ -164,8 +207,15 @@ public class Instruction extends AppCompatActivity {
         }
     }
 
-    public static void startTimer1() {
-        System.out.println("Time remaining: 10 mins");
+    public void startTimer1() {
+        android.app.Notification notification = new NotificationCompat.Builder(Instruction.this, CHANNEL_1_ID)
+                .setSmallIcon(R.drawable.ic_launcher_background)
+                .setContentTitle("Timer")
+                .setContentText("Time remaining: 10 minutes")
+                .setPriority(NotificationCompat.PRIORITY_HIGH)
+                .setCategory(NotificationCompat.CATEGORY_MESSAGE)
+                .build();
+        notificationManager.notify(1, notification);
         Step2Activity.countDownTimer=new CountDownTimer(Step2Activity.timeLeftInMilliseconds,1000) {
             @Override
             public void onTick(long l) {
@@ -174,18 +224,32 @@ public class Instruction extends AppCompatActivity {
 
             @Override
             public void onFinish() {
-                System.out.println("Time is up");
+                android.app.Notification notification = new NotificationCompat.Builder(Instruction.this, CHANNEL_1_ID)
+                        .setSmallIcon(R.drawable.ic_launcher_background)
+                        .setContentTitle("Timer")
+                        .setContentText("Time is up")
+                        .setPriority(NotificationCompat.PRIORITY_HIGH)
+                        .setCategory(NotificationCompat.CATEGORY_MESSAGE)
+                        .build();
+                notificationManager.notify(1, notification);System.out.println("Time is up");
             }
         }.start();
         Step2Activity.timerRunning=true;
     }
-    public static void stopTimer1() {
+    public void stopTimer1() {
         Step2Activity.countDownTimer.cancel();
         Step2Activity.timerRunning=false;
     }
 
-    public static void startTimer2() {
-        System.out.println("Time remaining: 3 mins");
+    public void startTimer2() {
+        android.app.Notification notification = new NotificationCompat.Builder(Instruction.this, CHANNEL_1_ID)
+                .setSmallIcon(R.drawable.ic_launcher_background)
+                .setContentTitle("Timer")
+                .setContentText("Time remaining: 3 minutes")
+                .setPriority(NotificationCompat.PRIORITY_HIGH)
+                .setCategory(NotificationCompat.CATEGORY_MESSAGE)
+                .build();
+        notificationManager.notify(1, notification);
         Step3Activity.countDownTimer=new CountDownTimer(Step3Activity.timeLeftInMilliseconds,1000) {
             @Override
             public void onTick(long l) {
@@ -194,19 +258,33 @@ public class Instruction extends AppCompatActivity {
 
             @Override
             public void onFinish() {
-                System.out.println("Time is up");
+                android.app.Notification notification = new NotificationCompat.Builder(Instruction.this, CHANNEL_1_ID)
+                        .setSmallIcon(R.drawable.ic_launcher_background)
+                        .setContentTitle("Timer")
+                        .setContentText("Time is up")
+                        .setPriority(NotificationCompat.PRIORITY_HIGH)
+                        .setCategory(NotificationCompat.CATEGORY_MESSAGE)
+                        .build();
+                notificationManager.notify(1, notification);
             }
         }.start();
         Step3Activity.timerRunning=true;
     }
-    public static void stopTimer2() {
+    public void stopTimer2() {
         Step3Activity.countDownTimer.cancel();
         Step3Activity.timerRunning=false;
     }
 
 
-    public static void startTimer3() {
-        System.out.println("Time remaining: 1 min 30 seconds");
+    public void startTimer3() {
+        android.app.Notification notification = new NotificationCompat.Builder(Instruction.this, CHANNEL_1_ID)
+                .setSmallIcon(R.drawable.ic_launcher_background)
+                .setContentTitle("Timer")
+                .setContentText("Time remaining: 1 min 30 seconds")
+                .setPriority(NotificationCompat.PRIORITY_HIGH)
+                .setCategory(NotificationCompat.CATEGORY_MESSAGE)
+                .build();
+        notificationManager.notify(1, notification);
         Step4Activity.countDownTimer=new CountDownTimer(Step4Activity.timeLeftInMilliseconds,1000) {
             @Override
             public void onTick(long l) {
@@ -215,12 +293,19 @@ public class Instruction extends AppCompatActivity {
 
             @Override
             public void onFinish() {
-                System.out.println("Time is up");
+                android.app.Notification notification = new NotificationCompat.Builder(Instruction.this, CHANNEL_1_ID)
+                        .setSmallIcon(R.drawable.ic_launcher_background)
+                        .setContentTitle("Timer")
+                        .setContentText("Time is up")
+                        .setPriority(NotificationCompat.PRIORITY_HIGH)
+                        .setCategory(NotificationCompat.CATEGORY_MESSAGE)
+                        .build();
+                notificationManager.notify(1, notification);
             }
         }.start();
         Step4Activity.timerRunning=true;
     }
-    public static void stopTimer3() {
+    public void stopTimer3() {
         Step4Activity.countDownTimer.cancel();
         Step4Activity.timerRunning=false;
     }

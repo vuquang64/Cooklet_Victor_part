@@ -1,24 +1,28 @@
 <resources>
     <string name="app_name">Cooklet_Victor_Work</string>
     <!--step instruction-->
+    <string name="step1_name"><b>Prepare ingredients</b></string>
     <string name="step1">
-        <b>Prepare ingredients</b>\nWash the beef, slice the beef into small pieces (your personal choice, we prefer small pieces
+        Wash the beef, slice the beef into small pieces (your personal choice, we prefer small pieces
         since it is easy to eat and it is not going to be chewy), also slice the onion, tomatoes,
         as well as mince the shallots and garlics.
     </string>
 
+    <string name="step2_name"><b>Marinate the beef</b></string>
     <string name="step2">
-        <b>Marinate the beef</b>\nMarinate the beef with 3 spoons of oil, 2 spoons of fish sauce, 1 spoon of broth mix, 1 and a half spoon of corn starch, 2 spoons of sugar, a little pepper, a spoon of minced garlic and shallot.
+        Marinate the beef with 3 spoons of oil, 2 spoons of fish sauce, 1 spoon of broth mix, 1 and a half spoon of corn starch, 2 spoons of sugar, a little pepper, a spoon of minced garlic and shallot.
 	    \nMix them all together, wrap them up and put them in the fridge for 10 minutes.
     </string>
 
+    <string name="step3_name"><b>Stir fry the beef</b></string>
     <string name="step3">
-        <b>Stir fry the beef</b>\nPut oil in the pan on the stove with medium heat, stir fry minced garlic and shallot until they turn into yellow.
+        Put oil in the pan on the stove with medium heat, stir fry minced garlic and shallot until they turn into yellow.
 	    \nPut the marinated beef into the pan and mix it well on high heat (cook it in 3 minutes, don’t cook it too long or it will be chewy), then put the beef out on the dish
     </string>
 
+    <string name="step4_name"><b>Finish and decorate the dish</b></string>
     <string name="step4">
-        <b>Finish and decorate the dish</b>\nPut some oil on the pan again, after it is hot, stir fry the tomatoes (1 minute), the onion (30 seconds),  then mix the beef again altogether with them.
+        Put some oil on the pan again, after it is hot, stir fry the tomatoes (1 minute), the onion (30 seconds),  then mix the beef again altogether with them.
         \nDecorate it with cilantro or your topping of choice. Eat it with hot rice is recommended.
     </string>
 
