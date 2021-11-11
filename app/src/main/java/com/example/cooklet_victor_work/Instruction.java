@@ -3,6 +3,7 @@ package com.example.cooklet_victor_work;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -141,25 +142,86 @@ public class Instruction extends AppCompatActivity {
 
     public void countDown1(View view) {
         if(Step2Activity.timerRunning){
-            Step2Activity.stopTimer();
+            stopTimer1();
         } else {
-            Step2Activity.startTimer();
+            startTimer1();
         }
     }
 
     public static void countDown2(View view) {
         if(Step3Activity.timerRunning){
-            Step3Activity.stopTimer();
+            stopTimer2();
         } else {
-            Step3Activity.startTimer();
+            startTimer2();
         }
     }
 
     public static void countDown3(View view) {
         if(Step4Activity.timerRunning){
-            Step4Activity.stopTimer();
+            stopTimer3();
         } else {
-            Step4Activity.startTimer();
+            startTimer3();
         }
+    }
+
+    public static void startTimer1() {
+        System.out.println("Time remaining: 10 mins");
+        Step2Activity.countDownTimer=new CountDownTimer(Step2Activity.timeLeftInMilliseconds,1000) {
+            @Override
+            public void onTick(long l) {
+                Step2Activity.timeLeftInMilliseconds=l;
+            }
+
+            @Override
+            public void onFinish() {
+                System.out.println("Time is up");
+            }
+        }.start();
+        Step2Activity.timerRunning=true;
+    }
+    public static void stopTimer1() {
+        Step2Activity.countDownTimer.cancel();
+        Step2Activity.timerRunning=false;
+    }
+
+    public static void startTimer2() {
+        System.out.println("Time remaining: 3 mins");
+        Step3Activity.countDownTimer=new CountDownTimer(Step3Activity.timeLeftInMilliseconds,1000) {
+            @Override
+            public void onTick(long l) {
+                Step3Activity.timeLeftInMilliseconds=l;
+            }
+
+            @Override
+            public void onFinish() {
+                System.out.println("Time is up");
+            }
+        }.start();
+        Step3Activity.timerRunning=true;
+    }
+    public static void stopTimer2() {
+        Step3Activity.countDownTimer.cancel();
+        Step3Activity.timerRunning=false;
+    }
+
+
+    public static void startTimer3() {
+        System.out.println("Time remaining: 1 min 30 seconds");
+        Step4Activity.countDownTimer=new CountDownTimer(Step4Activity.timeLeftInMilliseconds,1000) {
+            @Override
+            public void onTick(long l) {
+                Step4Activity.timeLeftInMilliseconds=l;
+            }
+
+            @Override
+            public void onFinish() {
+                System.out.println("Time is up");
+            }
+        }.start();
+        Step4Activity.timerRunning=true;
+    }
+    public static void stopTimer3() {
+        Step4Activity.countDownTimer.cancel();
+        Step4Activity.timerRunning=false;
     }
 }

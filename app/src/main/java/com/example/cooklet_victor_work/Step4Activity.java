@@ -10,33 +10,12 @@ public class Step4Activity extends AppCompatActivity {
 
 
     public static CountDownTimer countDownTimer;
-    public static long timeLeftInMilliseconds = 9000;
+    public static long timeLeftInMilliseconds = 20000;
     public static boolean timerRunning;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_step3);
-    }
-
-
-
-    public static void startTimer() {
-        countDownTimer=new CountDownTimer(timeLeftInMilliseconds,1000) {
-            @Override
-            public void onTick(long l) {
-                timeLeftInMilliseconds=l;
-            }
-
-            @Override
-            public void onFinish() {
-
-            }
-        }.start();
-        timerRunning=true;
-    }
-    public static void stopTimer() {
-        countDownTimer.cancel();
-        timerRunning=false;
+        setContentView(R.layout.activity_step4);
     }
 }

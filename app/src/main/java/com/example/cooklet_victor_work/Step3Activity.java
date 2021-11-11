@@ -10,33 +10,12 @@ import android.widget.Button;
 public class Step3Activity extends AppCompatActivity {
 
     public static CountDownTimer countDownTimer;
-    public static long timeLeftInMilliseconds = 18000;
+    public static long timeLeftInMilliseconds = 15000;
     public static boolean timerRunning;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_step3);
-    }
-
-
-    public static void startTimer() {
-        /*NotificationCompat.Builder builder = new NotificationCompat.Builder()*/
-        countDownTimer=new CountDownTimer(timeLeftInMilliseconds,1000) {
-            @Override
-            public void onTick(long l) {
-                timeLeftInMilliseconds=l;
-            }
-
-            @Override
-            public void onFinish() {
-
-            }
-        }.start();
-        timerRunning=true;
-    }
-    public static void stopTimer() {
-        countDownTimer.cancel();
-        timerRunning=false;
     }
 }
