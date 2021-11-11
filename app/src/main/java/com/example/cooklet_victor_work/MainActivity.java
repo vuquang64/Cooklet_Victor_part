@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     LinearLayout Layout_bars;
     TextView[] bottomBars;
     int[] screens;
-    Button Back;
+    Button Back,Home;
     ViewPager vp;
     MainActivity.MyViewPagerAdapter myvpAdapter;
 
@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         vp = (ViewPager) findViewById(R.id.view_pager);
         Layout_bars = (LinearLayout) findViewById(R.id.layoutBars);
         Back = (Button) findViewById(R.id.back);
+        Home = (Button) findViewById(R.id.home);
         myvpAdapter = new MainActivity.MyViewPagerAdapter();
         vp.setAdapter(myvpAdapter);
         vp.addOnPageChangeListener(viewPagerPageChangeListener);
@@ -77,8 +78,10 @@ public class MainActivity extends AppCompatActivity {
             ColoredBars(position);
             if (position == screens.length - 1) {
                 Back.setVisibility(View.GONE);
+                Home.setBackground(getDrawable(R.drawable.borderless_ripple));
             } else {
                 Back.setVisibility(View.VISIBLE);
+                Home.setBackground(getDrawable(R.drawable.white_button));
             }
         }
 

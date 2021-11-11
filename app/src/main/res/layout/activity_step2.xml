@@ -41,10 +41,11 @@
                 android:layout_centerInParent="true"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="2dp">
-                <VideoView
-                    android:id="@+id/video_step2"
+                <ImageView
+                    android:id="@+id/image_step2"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/step2"/>
             </FrameLayout>
 
             <TextView
