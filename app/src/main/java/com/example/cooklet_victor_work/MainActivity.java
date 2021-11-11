@@ -43,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
         vp.setAdapter(myvpAdapter);
         vp.addOnPageChangeListener(viewPagerPageChangeListener);
         ColoredBars(0);
-
     }
 
     public void back(View view) {

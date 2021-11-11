@@ -24,9 +24,11 @@ public class PreparationActivity extends AppCompatActivity {
         ArrayList<Ingredients> ingredientList = new ArrayList<>();
         ingredientList.add(meat);
         ingredientList.add(oil);
+        System.out.println("Adding the items");
 
         IngredientListAdapter adapter = new IngredientListAdapter(this,R.layout.adapter_view_layout, ingredientList);
         ingredientListView.setAdapter(adapter);
+        System.out.println("Creating the adapter");
     }
 
     public void openInstruction(View view) {

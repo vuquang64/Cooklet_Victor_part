@@ -11,18 +11,20 @@
         android:layout_height="60dp"
         android:text="TextView1"
         android:textColor="@color/black"
+        android:textSize="20dp"
         android:id="@+id/ingredientName1"
         android:textAlignment="center"
-        android:layout_weight="30"
+        android:layout_weight="70"
         android:gravity="center"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:textColor="@color/black"
+        android:textSize="20dp"
         android:text="TextView2"
         android:id="@+id/ingredientAmount1"
         android:textAlignment="center"
         android:gravity="center"
-        android:layout_weight="70"/>
+        android:layout_weight="30"/>
 </LinearLayout>
