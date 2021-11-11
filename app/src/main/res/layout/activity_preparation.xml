@@ -12,8 +12,10 @@
         android:id="@+id/prepartion_card"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="30dp"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="30dp"
         android:layout_weight="1"
+        android:layout_marginBottom="80dp"
         app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="30dp"
         app:cardElevation="6dp">
@@ -52,7 +54,7 @@
                 android:layout_marginStart="30dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginEnd="30dp"
-                android:layout_marginBottom="30dp"
+                android:layout_marginBottom="5dp"
                 android:background="@drawable/black_button" />
 
             <Button

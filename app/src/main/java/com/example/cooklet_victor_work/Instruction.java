@@ -5,6 +5,7 @@ import static com.example.cooklet_victor_work.Notification.CHANNEL_2_ID;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v4.app.NotificationCompat;
@@ -18,7 +19,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.MediaController;
 import android.widget.TextView;
+import android.widget.VideoView;
 
 public class Instruction extends AppCompatActivity {
     LinearLayout Layout_bars;
@@ -51,19 +54,22 @@ public class Instruction extends AppCompatActivity {
         ColoredBars(0);
 
         notificationManager = NotificationManagerCompat.from(this);
+
+
     }
 
-    public void next(View v) {
+    public void homeFromInstruc(View v) {
         int i = getItem(+1);
         if (i < screens.length) {
-            vp.setCurrentItem(i);
+            launchIntro();
         } else {
-            launchMain();
+            Intent intent = new Intent(this, FinishActivity.class);
+            startActivity(intent);
         }
     }
 
-    public void skip(View view) {
-        launchMain();
+    public void backIntro(View view) {
+        launchIntro();
     }
 
     private void ColoredBars(int thisScreen) {
@@ -87,7 +93,7 @@ public class Instruction extends AppCompatActivity {
         return vp.getCurrentItem() + i;
     }
 
-    private void launchMain() {
+    private void launchIntro() {
         startActivity(new Intent(Instruction.this, MainActivity.class));
         finish();
     }

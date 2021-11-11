@@ -25,26 +25,31 @@
         android:background="@drawable/borderless_ripple"
         android:text="home"
         android:textSize="20sp"
-        android:onClick="home"
+        android:onClick="homeFromInstruc"
         android:textColor="@android:color/black"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
+
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:alpha=".4"
-        android:background="@android:color/white"
         android:layout_above="@+id/home"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:alpha=".4"
+        android:background="@android:color/white" />
+
     <Button
         android:id="@+id/back"
         android:layout_width="50dp"
         android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
         android:background="@drawable/circle_button"
         android:foreground="@drawable/ic_back_arrow"
-        android:onClick="skip"
-        android:layout_margin="5dp"
-        android:textColor="@android:color/black"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
+        android:onClick="backIntro"
+        android:textColor="@android:color/black" />
 </RelativeLayout>

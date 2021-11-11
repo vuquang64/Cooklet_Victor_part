@@ -12,9 +12,19 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_alignParentBottom="true"
+        android:layout_marginBottom="51dp"
         android:gravity="center"
         android:orientation="horizontal">
     </LinearLayout>
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_above="@+id/home"
+        android:layout_alignParentStart="true"
+        android:alpha=".4"
+        android:background="@android:color/white" />
 
     <Button
         android:id="@+id/back"
@@ -28,6 +38,19 @@
         android:layout_marginBottom="5dp"
         android:background="@drawable/circle_button"
         android:foreground="@drawable/ic_back_arrow"
-        android:onClick="skip"
+        android:onClick="back"
         android:textColor="@android:color/black" />
+
+    <Button
+        android:id="@+id/home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/borderless_ripple"
+        android:text="home"
+        android:textSize="20sp"
+        android:onClick="homeFromIntro"
+        android:textColor="@android:color/black"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
 </RelativeLayout>

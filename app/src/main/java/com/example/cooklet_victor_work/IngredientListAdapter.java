@@ -18,7 +18,8 @@ public class IngredientListAdapter extends ArrayAdapter<Ingredients> {
 
     public IngredientListAdapter(@NonNull Context context, int resource, @NonNull ArrayList<Ingredients> objects) {
         super(context, resource, objects);
-        this.mContext = mContext;
+        mContext = context;
+        mResource = resource;
     }
 
     @NonNull

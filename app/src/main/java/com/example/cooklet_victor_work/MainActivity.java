@@ -45,17 +45,8 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void next(View v) {
-        int i = getItem(+1);
-        if (i < screens.length) {
-            vp.setCurrentItem(i);
-        } else {
-            launchMain();
-        }
-    }
-
-    public void skip(View view) {
-        launchMain();
+    public void back(View view) {
+        startActivity(new Intent(MainActivity.this, MainActivity.class));
     }
 
     private void ColoredBars(int thisScreen) {
@@ -77,11 +68,6 @@ public class MainActivity extends AppCompatActivity {
 
     private int getItem(int i) {
         return vp.getCurrentItem() + i;
-    }
-
-    private void launchMain() {
-        startActivity(new Intent(MainActivity.this, MainActivity.class));
-        finish();
     }
 
     ViewPager.OnPageChangeListener viewPagerPageChangeListener = new ViewPager.OnPageChangeListener() {
@@ -106,6 +92,10 @@ public class MainActivity extends AppCompatActivity {
 
         }
     };
+
+    public void homeFromIntro(View view) {
+        startActivity(new Intent(MainActivity.this, MainActivity.class));
+    }
 
     public class MyViewPagerAdapter extends PagerAdapter {
         private LayoutInflater inflater;
