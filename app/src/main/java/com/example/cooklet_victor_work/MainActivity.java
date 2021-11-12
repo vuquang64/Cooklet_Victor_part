@@ -1,7 +1,9 @@
 package com.example.cooklet_victor_work;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -43,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         vp.setAdapter(myvpAdapter);
         vp.addOnPageChangeListener(viewPagerPageChangeListener);
         ColoredBars(0);
+
     }
 
     public void back(View view) {
@@ -74,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public void onPageSelected(int position) {
+            System.out.println("It's running change");
             ColoredBars(position);
             if (position == screens.length - 1) {
                 Back.setVisibility(View.GONE);
@@ -107,6 +111,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public Object instantiateItem(ViewGroup container, int position) {
+            System.out.println("It's running start");
             inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             View view = inflater.inflate(screens[position], container, false);
             container.addView(view);

@@ -5,22 +5,18 @@
     <application
         android:name=".Notification"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/cooklet_logo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/cooklet_round_logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
         <activity
-            android:name=".FinishActivity"
-            android:exported="true" />
+            android:theme="@style/Theme.Cooklet"
+            android:name=".MenuActivity"
+            android:exported="false" />
         <activity
-            android:name=".IntroductionActivity"
-            android:exported="true" />
-        <activity
-            android:name=".PreparationActivity"
-            android:exported="true" />
-        <activity
-            android:name=".MainActivity"
+            android:theme="@style/Theme.Cooklet"
+            android:name=".HomeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,20 +25,21 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".FinishActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false">
+        </activity>
+        <activity
             android:name=".Instruction"
-            android:exported="true" />
+            android:exported="false" />
         <activity
-            android:name=".Step1Activity"
-            android:exported="true" />
+            android:name=".IntroductionActivity"
+            android:exported="false" />
         <activity
-            android:name=".Step2Activity"
-            android:exported="true" />
-        <activity
-            android:name=".Step3Activity"
-            android:exported="true" />
-        <activity
-            android:name=".Step4Activity"
-            android:exported="true" />
+            android:name=".PreparationActivity"
+            android:exported="false"/>
     </application>
 
 </manifest>
