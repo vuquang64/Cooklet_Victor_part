@@ -36,7 +36,7 @@
 
             <FrameLayout
                 android:id="@+id/frame_step1"
-                android:layout_width="330dp"
+                android:layout_width="wrap_content"
                 android:layout_height="180dp"
                 android:layout_below="@+id/numberText"
                 android:layout_centerInParent="true"
